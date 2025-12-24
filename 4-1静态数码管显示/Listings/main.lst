@@ -1,0 +1,65 @@
+C51 COMPILER V9.54   MAIN                                                                  11/18/2025 12:45:44 PAGE 1   
+
+
+C51 COMPILER V9.54, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\main.obj
+COMPILER INVOKED BY: D:\Keil_v5\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\main
+                    -.lst) OBJECT(.\Objects\main.obj)
+
+line level    source
+
+   1          #include <STC89C5xRC.H>
+   2          
+   3          
+   4          unsigned char NixieTable[]={0x3f,0x06,0x5b,0x4f,0x66,0x6d,0x7d,0x07,0x7f,0x6f};//ÊýÂë¹Ü0µ½9µÄÊ®Áù½øÖÆ´úÂë¡
+             -£
+   5          
+   6          void Nixie(unsigned char Location,Number)
+   7          {
+   8   1              switch(Location)
+   9   1              {
+  10   2                      case 7:
+  11   2                              P24=0;P23=0;P22=1;break;
+  12   2                      case 6:
+  13   2                              P24=0;P23=1;P22=0;break;
+  14   2                      case 5:
+  15   2                              P24=0;P23=1;P22=1;break;                
+  16   2                      case 4:
+  17   2                              P24=1;P23=0;P22=1;break;
+  18   2                      case 3:
+  19   2                              P24=1;P23=0;P22=1;break;
+  20   2                      case 2:
+  21   2                              P24=1;P23=1;P22=0;break;
+  22   2                      case 1:
+  23   2                              P24=1;P23=1;P22=1;break;
+  24   2                      case 8:
+  25   2                              P24=0;P23=0;P22=0;break;
+  26   2              }
+  27   1              P0=NixieTable[Number];
+  28   1      }
+  29                  
+  30          
+  31          
+  32          void main()
+  33          {
+  34   1              Nixie(2,3);
+  35   1              while(1)
+  36   1              {
+  37   2              
+  38   2              }
+  39   1              
+  40   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    106    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     10    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
