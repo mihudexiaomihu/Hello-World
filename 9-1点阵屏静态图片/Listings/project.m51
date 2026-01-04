@@ -1,0 +1,167 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        11/21/2025  18:01:46  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\main.obj, .\Objects\Delay.obj TO .\Objects\project PRINT (.\Listings\project.m51) 
+>> RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\main.obj (MAIN)
+  .\Objects\Delay.obj (DELAY)
+  D:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  .\Objects\project (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0002H     UNIT         _DATA_GROUP_
+            IDATA   000AH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     0042H     UNIT         ?PR?MAIN?MAIN
+            CODE    0842H     002DH     UNIT         ?PR?__74HC595_WRITBYTE?MAIN
+            CODE    086FH     0026H     UNIT         ?PR?_MATRIXLED_SHOWCOLUMN?MAIN
+            CODE    0895H     0018H     UNIT         ?PR?_DELAY?DELAY
+            CODE    08ADH     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\project (MAIN)
+
+
+SEGMENT                                  DATA_GROUP 
+  +--> CALLED SEGMENT                  START    LENGTH
+------------------------------------------------------
+?C_C51STARTUP                          -----    -----
+  +--> ?PR?MAIN?MAIN
+
+?PR?MAIN?MAIN                          -----    -----
+  +--> ?PR?_MATRIXLED_SHOWCOLUMN?MAIN
+
+?PR?_MATRIXLED_SHOWCOLUMN?MAIN         -----    -----
+  +--> ?PR?__74HC595_WRITBYTE?MAIN
+  +--> ?PR?_DELAY?DELAY
+
+?PR?_DELAY?DELAY                       0008H    0002H
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\project (MAIN)
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      11/21/2025  18:01:46  PAGE 2
+
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00C0H         PUBLIC        XICON
+  D:00B0H         PUBLIC        P3
+  D:00E8H         PUBLIC        P4
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  C:0842H         PUBLIC        __74HC595_WritByte
+  C:0800H         PUBLIC        main
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  C:0873H         PUBLIC        _MatrixLED_ShowColumn
+  B:00B0H.5       PUBLIC        RCK
+  B:00B0H.6       PUBLIC        SCK
+  B:00B0H.4       PUBLIC        SEN
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          __74HC595_WRITBYTE
+  D:0005H         SYMBOL        Byte
+  -------         DO            
+  D:0003H         SYMBOL        i
+  -------         ENDDO         
+  C:0842H         LINE#         8
+  C:0844H         LINE#         9
+  C:0844H         LINE#         11
+  C:0846H         LINE#         12
+  C:0846H         LINE#         13
+  C:0862H         LINE#         14
+  C:0864H         LINE#         15
+  C:0866H         LINE#         16
+  C:086AH         LINE#         17
+  C:086CH         LINE#         18
+  C:086EH         LINE#         19
+  -------         ENDPROC       __74HC595_WRITBYTE
+  -------         PROC          L?0013
+  -------         ENDPROC       L?0013
+  -------         PROC          _MATRIXLED_SHOWCOLUMN
+  D:0002H         SYMBOL        colum
+  D:0004H         SYMBOL        Date
+  C:0873H         LINE#         21
+  C:0875H         LINE#         22
+  C:0875H         LINE#         23
+  C:087AH         LINE#         24
+  C:088AH         LINE#         25
+  C:0891H         LINE#         26
+  C:0894H         LINE#         28
+  -------         ENDPROC       _MATRIXLED_SHOWCOLUMN
+  -------         PROC          MAIN
+  C:0800H         LINE#         30
+  C:0800H         LINE#         31
+  C:0800H         LINE#         32
+BL51 BANKED LINKER/LOCATER V6.22                                                      11/21/2025  18:01:46  PAGE 3
+
+
+  C:0800H         LINE#         33
+  C:0800H         LINE#         34
+  C:0809H         LINE#         35
+  C:080EH         LINE#         36
+  C:0817H         LINE#         37
+  C:081CH         LINE#         38
+  C:0825H         LINE#         39
+  C:082EH         LINE#         40
+  C:0837H         LINE#         41
+  C:0840H         LINE#         42
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+  -------         MODULE        DELAY
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0895H         PUBLIC        _Delay
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        xms
+  -------         DO            
+  D:0008H         SYMBOL        i
+  D:0009H         SYMBOL        j
+  -------         ENDDO         
+  C:0895H         LINE#         2
+  C:0895H         LINE#         3
+  C:0895H         LINE#         4
+  C:0899H         LINE#         5
+  C:0899H         LINE#         8
+  C:089CH         LINE#         9
+  C:089FH         LINE#         11
+  C:089FH         LINE#         12
+  C:08A2H         LINE#         13
+  C:08A5H         LINE#         14
+  C:08AAH         LINE#         15
+  C:08ACH         LINE#         16
+  -------         ENDPROC       _DELAY
+  -------         ENDMOD        DELAY
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 00ADH BYTE ( 8%) *
+******************************************************************************
+
+Program Size: data=11.0 xdata=0 code=188
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
